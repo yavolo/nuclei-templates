@@ -1,0 +1,18 @@
+id: addeventlistener-message
+
+info:
+  name: addEventListener('message') on main page
+  author: yavolo
+  severity: info
+  tags: js,xss
+  reference: 
+
+requests:
+  - method: GET
+    path:
+      - '{{BaseURL}}'
+    matchers:
+      - type: regex
+        regex:
+          - "addEventListener\((?:'|\")message(?:'|\")"
+        part: body
