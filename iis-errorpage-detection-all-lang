@@ -1,0 +1,18 @@
+id: default-iis7-page
+
+info:
+  name: IIS Error page on css, works on all languages
+  author: yavolo
+  severity: info
+  tags: tech,iis
+  reference: 
+
+requests:
+  - method: GET
+    path:
+      - '{{BaseURL}}/does-not-exist-33okfw3pofj3f'
+    matchers:
+      - type: word
+        words:
+          - "#header{width:96%;margin:0 0 0 0;padding:6px 2% 6px 2%;font-family:"
+        part: body
